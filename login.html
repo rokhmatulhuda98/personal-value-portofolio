@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Yayasan Kotagede Darussalam</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di Website Yayasan Kotagede Darussalam</h1>
+    </header>
+
+    <main>
+        <section class="login-section">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Yayasan Kotagede Darussalam. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Fungsi untuk menangani proses login
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Mencegah form submit default
+
+            // Ambil nilai dari form
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Validasi sederhana
+            if (!username || !password) {
+                alert('Harap isi semua field!');
+                return;
+            }
+
+            // Identifikasi role berdasarkan username
+            let role = '';
+            if (username.toLowerCase().includes('admin')) {
+                role = 'admin';
+            } else if (username.toLowerCase().includes('user')) {
+                role = 'user';
+            } else {
+                alert('Username tidak valid!');
+                return;
+            }
+
+            // Simulasi login (tanpa backend)
+            if (role === 'admin' && password === 'admin123') {
+                // Simpan role admin di localStorage
+                localStorage.setItem('role', 'admin');
+                window.location.href = 'admin/index.html'; // Redirect ke halaman admin
+            } else if (role === 'user' && password === 'user123') {
+                // Simpan role user di localStorage
+                localStorage.setItem('role', 'user');
+                window.location.href = 'user/index.html'; // Redirect ke halaman user
+            } else {
+                alert('Username atau password salah!');
+            }
+        });
+    </script>
+</body>
+</html>

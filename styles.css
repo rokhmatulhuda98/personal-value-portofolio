@@ -1,0 +1,123 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0a1f2d, #11334d, #1a4b6e); /* Gradien biru elegan */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Efek glow halus */
+    margin: 0;
+}
+/* Login Section */
+.login-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Shadow lebih tebal */
+    backdrop-filter: blur(10px);
+    width: 90%;
+    max-width: 320px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-section h2 {
+    margin-bottom: 18px;
+    margin-top: 0px;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+.login-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* Input */
+.login-section input {
+    width: 93%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-section input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Efek saat input diklik (focused) */
+.login-section input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3); /* Efek shadow lebih halus */
+}
+
+/* Tombol Login */
+.login-section button {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-size: 200% 100%;
+}
+
+.login-section button:hover {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    transform: scale(1.03);
+    background-position: 0 50%;
+    box-shadow: 0 0 20px rgba(0, 194, 255, 0.7); /* Efek glow pada hover */
+}
+
+.login-section button:active {
+    transform: scale(0.95);
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    animation: fadeIn 1.5s ease-in-out;
+}
